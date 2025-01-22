@@ -161,14 +161,17 @@ def convert_xlsx_to_adoc_with_images(input_file, output_file, image_output_dir):
                         img_path = os.path.join(image_output_dir, f"{img_name}") 
                         adoc_file.write(f"image::{img_path}[{img_name}]\n\n") 
                 df = excel_data.parse(sheet_name) 
-                num_cols = len(df.columns)
-                col_widths = ["6"] + ["1"] * (num_cols -1)
-                col_widths_str = ",".join(col_widths)
 
-                adoc_file.write(f"[cols=\"{col_widths_str}\", options=\"header\"]\n|===\n")
-                adoc_file.write("| " + " | ".join(df.columns) + "\n")
-                for _, row in df.iterrows():
-                    adoc_file.write("| " + " | ".join(map(str, row)) + "\n") 
+                df = df.transpose()
+
+#                num_cols = len(df.columns)
+#                col_widths = ["6"] + ["1"] * (num_cols -1)
+#                col_widths_str = ",".join(col_widths)
+
+                adoc_file.write("[cols=\"auto\", options=\"header\"]\n|===\n")
+                adoc_file.write("| Row Header | " + " | ".join(df.columns.astype(str)) + "\n")
+                for idx, row in df.iterrows():
+                    adoc_file.write(f"| {idx}" + " | ".join(map(str, row)) + "\n") 
                 adoc_file.write("|===\n\n")
 
         print(f"Successfully converted {input_file} to {output_file} with images in {image_output_dir}") 
