@@ -1,7 +1,6 @@
 from PIL import Image
 from docx import Document
 import os
-import subprocess 
 import argparse
 
 def extract_text_and_media_from_docx(input_file, media_folder):
@@ -20,9 +19,18 @@ def extract_text_and_media_from_docx(input_file, media_folder):
         os.makedirs(media_folder) 
     doc = Document(input_file)
     adoc_content = []
-    print(doc.paragraphs)
 
-    # read content of docx file and append content to adoc
+    # headers and footers
+    if doc.sections:
+        for section in doc.sections:
+            header_text = " ".join(paragraph.text.strip() for paragraph in section.header.paragraphs if paragraph.text.strip())
+            if header_text:
+                adoc_content.append(f"// Header: {section.header.text.strip()}\n")
+            footer_text = " ".join(paragraph.text.strip() for paragraph in section.footer.paragraphs if paragraph.text.strip())
+            if footer_text:
+                adoc_content.append(f"// Footer: {section.footer.text.strip()}\n")
+                   
+    # paragraphs
     for paragraph in doc.paragraphs:
         print(f"Paragraph: {paragraph.text}")
         if paragraph.style.name.startswith("Heading"): #matching on headings"
@@ -32,14 +40,15 @@ def extract_text_and_media_from_docx(input_file, media_folder):
             if paragraph.text.strip():
                 adoc_content.apppend(prargraph.text + "\n")
 
-    print("Processing tables...")
+    # tables
     for table in doc.tables:
         adoc_content.append("[cols=\"auto\", options=\"header\"]\n|===\n")
         for row in table.rows:
             row_data = "| " + " | ".join(cell.text.strip() for cell in row.cells)
             adoc_content.append(row_data + "\n")
         adoc_content.append("|===\n")
-        
+
+    #images
     for i, rel in enumerate(doc.part.rels.values()):
         if "image" in rel.target_ref:
             img_blob = rel.target_part.blob
@@ -50,7 +59,15 @@ def extract_text_and_media_from_docx(input_file, media_folder):
             with open(img_path, "wb") as img_file:
                 img_file.write(img_blob)
             adoc_content.append(f"image::{img_path}[Image {i + 1}]\n")
-    print(adoc_content)
+
+    #Inspecting unparsed content
+    for element in doc.element.body:
+        if hasattr(element, "tag"):
+            tag= element.tag.split("}")[-1]
+            text = element.text if element.text else ""
+            if text.strip():
+                adoc_contect.append(f"// unparsed Element ({tag}): {text.strpi()}\n")
+
     return adoc_content
         
 
