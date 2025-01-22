@@ -12,6 +12,16 @@
 
 # Storyboard
 
+image::extracted_images/image1.png[image1.png]
+
+image::extracted_images/image2.png[image2.png]
+
+image::extracted_images/image3.png[image3.png]
+
+image::extracted_images/image3.png[image3.png]
+
+image::extracted_images/image4.png[image4.png]
+
 [cols="auto", options="header"]
 |===
 | Target Field | Target Type | Format | Mandatory | Hover/Help Text | Display Rule | Default Value | Reference Table Name | Event/Business Logic | Validation Condition | Validation ID | Open Questions | Status | MAGI | Medicaid | PeachCare | Food Stamps | TANF | LIHEAP | Child Care | WIC | Table Name | Column Name | JSP Name

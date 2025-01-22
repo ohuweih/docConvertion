@@ -156,10 +156,10 @@ def convert_xlsx_to_adoc_with_images(input_file, output_file, image_output_dir):
             for sheet_name in excel_data.sheet_names: # Write the sheet name 
                 adoc_file.write(f"# {sheet_name}\n\n")
 
-                for idx, image in enumerate(images):
-                    if sheet_name == image[:-2]:
-                        img_path = os.path.join(image_output_dir, f"image{idx +1}.png") 
-                        adoc_file.write(f"image::{img_path}[{image}]\n\n") 
+                if sheet_name in images:
+                    for img_name in images[sheet_name]:
+                        img_path = os.path.join(image_output_dir, f"{img_name}") 
+                        adoc_file.write(f"image::{img_path}[{img_name}]\n\n") 
                 df = excel_data.parse(sheet_name) 
                 adoc_file.write("[cols=\"auto\", options=\"header\"]\n|===\n")
                 adoc_file.write("| " + " | ".join(df.columns) + "\n")
