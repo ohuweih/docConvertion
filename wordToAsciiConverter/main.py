@@ -4,6 +4,7 @@ import argparse
 import logging
 import formatting
 import imageConverter
+import xlsxConverter
 
 # Configure logging
 logging.basicConfig(level=logging.INFO,
@@ -81,16 +82,19 @@ def main():
     '''
     parser = argparse.ArgumentParser(description="convert docx to adoc, including image support")
     parser.add_argument("-i", "--input", required=True, help="Docx to convert")
-    parser.add_argument("-t", "--to", required=True, help="name of file to convert to")
+    parser.add_argument("-o", "--output", required=True, help="name of file to convert to")
 
     args = parser.parse_args()
     media_folder = f"{args.to}/extracted_media/"
 
-    run_pandoc(media_folder, args.input, f"{args.to}_no_format.adoc")
-    
-    fix_asciidoc(f"{args.to}/{args.to}_no_format.adoc", f"{args.to}.adoc")
-
-    imageConverter.convert_images_to_png(media_folder)
+    if ".docx" in args.input:
+        run_pandoc(media_folder, args.input, f"{args.output}_no_format.adoc")
+        fix_asciidoc(f"{args.output}/{args.output}_no_format.adoc", f"{args.output}.adoc")
+        imageConverter.convert_images_to_png(media_folder)
+    elif ".xlsx" in args.input:
+        xlsxConverter.convert_xlsx_to_adoc_with_images(args.input, args.output, image_output_dir)
+    else:
+        print("File not supported: Expected a docx or xlsx file")
 
 if __name__ == "__main__":
     main()
