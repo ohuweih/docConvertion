@@ -5,6 +5,7 @@ import logging
 import formatting
 import imageConverter
 import xlsxConverter
+import shutil
 
 # Configure logging
 logging.basicConfig(level=logging.INFO,
@@ -18,10 +19,27 @@ def run_pandoc(media_folder, input_file, output_file):
         Args: command (str): The shell command to run. 
         output_file (str): Path to the file where output will be saved. 
     """ 
+
+    pandoc_path = shutil.which("pandoc")
+
+    if not pandoc_path:
+        print("Pandoc executable not found. Ensure Pandoc is installed and available in the system PATH.")
+        return
+    
     try:
-        command = f"/Users/ohuweih/Documents/pandoc-3.6.2-windows-x86_64/pandoc-3.6.2/pandoc.exe -f docx -t asciidoc --default-image-extension '.png' --extract-media={media_folder} -o {output_file[:-15]}/{output_file} {input_file}"
-        subprocess.run(command) 
+        command = [
+            pandoc_path,
+            "-f", "docx"
+            "-t", "asciidoc",
+            "--default-image-extension", ".png",
+            f"--ectract-media={media_folder}",
+            f"-o {output_file[:-15]}/{output_file}",
+            input_file
+        ]
+
+        subprocess.run(command, check=True) 
         print(f"Command executed successfully. Output saved to {output_file}") 
+        
     except subprocess.CalledProcessError as e: 
         print(f"Failed to execute command: {e}") 
         
