@@ -24,9 +24,11 @@ def extract_text_and_media_from_docx(input_file, media_folder):
     if doc.sections:
         for section in doc.sections:
             header_text = " ".join(paragraph.text.strip() for paragraph in section.header.paragraphs if paragraph.text.strip())
+            print(f"Headers: {header_text}")
             if header_text:
                 adoc_content.append(f"// Header: {section.header.text.strip()}\n")
             footer_text = " ".join(paragraph.text.strip() for paragraph in section.footer.paragraphs if paragraph.text.strip())
+            print(f"Footer: {footer_text}")
             if footer_text:
                 adoc_content.append(f"// Footer: {section.footer.text.strip()}\n")
                    
@@ -42,6 +44,7 @@ def extract_text_and_media_from_docx(input_file, media_folder):
 
     # tables
     for table in doc.tables:
+        print(f"Tables: {table}")
         adoc_content.append("[cols=\"auto\", options=\"header\"]\n|===\n")
         for row in table.rows:
             row_data = "| " + " | ".join(cell.text.strip() for cell in row.cells)
@@ -50,6 +53,7 @@ def extract_text_and_media_from_docx(input_file, media_folder):
 
     #images
     for i, rel in enumerate(doc.part.rels.values()):
+        print(f"images: {rel.target_ref}")
         if "image" in rel.target_ref:
             img_blob = rel.target_part.blob
             img_ext = os.path.splittext(rel.target_ref)[-1]
@@ -62,9 +66,11 @@ def extract_text_and_media_from_docx(input_file, media_folder):
 
     #Inspecting unparsed content
     for element in doc.element.body:
+        print(f"Elements: {element}")
         if hasattr(element, "tag"):
             tag= element.tag.split("}")[-1]
             text = element.text if element.text else ""
+            print(text)
             if text.strip():
                 adoc_contect.append(f"// unparsed Element ({tag}): {text.strpi()}\n")
 
