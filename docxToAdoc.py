@@ -2,6 +2,8 @@ from PIL import Image
 from docx import Document
 import os
 import argparse
+from docx.oxml import parse_xml
+from docx.oxml.ns import qn
 
 def extract_text_and_media_from_docx(input_file, media_folder):
     """
@@ -26,20 +28,20 @@ def extract_text_and_media_from_docx(input_file, media_folder):
             header_text = " ".join(paragraph.text.strip() for paragraph in section.header.paragraphs if paragraph.text.strip())
             print(f"Headers: {header_text}")
             if header_text:
-                adoc_content.append(f"// Header: {section.header.text.strip()}\n")
+                adoc_content.append(f"// Header: {header_text}\n")
             footer_text = " ".join(paragraph.text.strip() for paragraph in section.footer.paragraphs if paragraph.text.strip())
             print(f"Footer: {footer_text}")
             if footer_text:
-                adoc_content.append(f"// Footer: {section.footer.text.strip()}\n")
+                adoc_content.append(f"// Footer: {footer_text}\n")
                    
     # paragraphs
     for paragraph in doc.paragraphs:
-        print(f"Paragraph: {paragraph.text}")
-        if paragraph.style.name.startswith("Heading"): #matching on headings"
-            level = int(paragraph.style.name.split()[-1])
-            adoc_content.append(f"{'=' * level} {paragraph.text}\n")
-        else:
-            if paragraph.text.strip():
+        if paragraph.text.strip():
+            print(f"Paragraph: {paragraph.text}")
+            if paragraph.style.name.startswith("Heading"): #matching on headings"
+                level = int(paragraph.style.name.split()[-1])
+                adoc_content.append(f"{'=' * level} {paragraph.text.strip()}\n")
+            else:
                 adoc_content.apppend(prargraph.text + "\n")
 
     # tables
@@ -67,12 +69,20 @@ def extract_text_and_media_from_docx(input_file, media_folder):
     #Inspecting unparsed content
     for element in doc.element.body:
         print(f"Elements: {element}")
-        if hasattr(element, "tag"):
-            tag= element.tag.split("}")[-1]
-            text = element.text if element.text else ""
-            print(text)
-            if text.strip():
-                adoc_contect.append(f"// unparsed Element ({tag}): {text.strpi()}\n")
+        tag = element.tag.split("}")[-1]  # Get the tag name without namespace
+        if tag == "p": #paragraph
+            adoc_content.append(element.text or "")
+        elif tag == "tbl" : #table
+            adoc_content.append("[cols=\"auto\", options=\"header\"]\n|===\n")
+            for row in element.findall(".//{http://schemas.openxmlformats.org/wordprocessingml/2006/main}tr"):
+                row_data = "| " + " | ".join(
+                    cell.text.strip() if cell.text else "" for cell in row.findall(".//{http://schemas.openxmlformats.org/wordprocessingml/2006/main}tc")
+                )
+                adoc_content.append(row_data + "\n")
+            adoc_content.append("|===\n")
+
+        elif tag == "drawing" or tag == "pict":
+            adoc_content.append("// Found embedded drawing or picture (unprocessed)\n")
 
     return adoc_content
         
