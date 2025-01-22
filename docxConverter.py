@@ -167,9 +167,19 @@ def remove_bad_plus_syntax(content):
     pattern = "\+\+"
     return re.sub(pattern, '', content)
 
+def replace_image_suffix_to_png(content):
+    pattern = ".wmf"
+    content = re.sub(pattern, '.png', content)
+    pattern = ".emf"
+    content = re.sub(pattern, '.png', content)
+    return content
+
 def process_content(content):
     logging.info("Removing certain patterns in asciidoc file")
     content = remove_text_by_patterns(content)
+
+    logging.info("changing all image links to .png")
+    content = replace_image_suffix_to_png(content)
 
     logging.info("Escaping double angle brackets")
     content = escape_double_angle_brackets(content)
