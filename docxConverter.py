@@ -50,6 +50,7 @@ def convert_images_to_png(media_folder):
             except Exception as e:
                 print(f"Failed to convert {filename}: {e}")
 
+
 def escape_double_angle_brackets(content):
     pattern = r"<<(.*?)>>"
     return re.sub(pattern, r"\<<\1>>", content)
@@ -161,6 +162,17 @@ def add_links_to_bibliography(content, keys):
         content = re.sub(in_link_patterns, f'link:#bib{key}[[{key}\]]', content)
     return content
 
+
+def remove_bad_plus_syntax(content):
+    pattern = "++_++"
+    matches = set()
+    matches.update(re.findall(pattern, content))
+
+    # Iterate over the matches and modify the figure tags
+    for match in matches:
+        content = content.replace(match, '')
+
+
 def process_content(content):
     logging.info("Removing certain patterns in asciidoc file")
     content = remove_text_by_patterns(content)
@@ -182,6 +194,9 @@ def process_content(content):
 
     logging.info("Escaping square brackets")
     content = escape_source_square_brackets(content)
+
+    logging.info("Removing bad ++ patters")
+    content = remove_bad_plus_syntax(content)
 
     return content
 
