@@ -1,6 +1,6 @@
 # Screenshot
 
-[cols="90%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%", options="header"]
+[cols="100,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", options="header"]
 |===
 | GA IES - Data Collection - Help Text - Qualifying Activities Definitions and Acceptable Verification | Unnamed: 1 | Unnamed: 2 | Unnamed: 3 | Unnamed: 4 | Unnamed: 5 | Unnamed: 6 | Unnamed: 7 | Unnamed: 8 | Unnamed: 9 | Unnamed: 10 | Unnamed: 11 | Unnamed: 12 | Unnamed: 13 | Unnamed: 14 | Unnamed: 15 | Unnamed: 16 | Unnamed: 17 | Unnamed: 18 | Unnamed: 19 | Unnamed: 20 | Unnamed: 21 | Unnamed: 22 | Unnamed: 23 | Unnamed: 24 | Unnamed: 25 | Unnamed: 26 | Unnamed: 27 | Unnamed: 28 | Unnamed: 29 | Unnamed: 30
 | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan
@@ -22,7 +22,7 @@ image::extracted_images/image3.png[image3.png]
 
 image::extracted_images/image4.png[image4.png]
 
-[cols="3,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%,30%", options="header"]
+[cols="3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", options="header"]
 |===
 | Target Field | Target Type | Format | Mandatory | Hover/Help Text | Display Rule | Default Value | Reference Table Name | Event/Business Logic | Validation Condition | Validation ID | Open Questions | Status | MAGI | Medicaid | PeachCare | Food Stamps | TANF | LIHEAP | Child Care | WIC | Table Name | Column Name | JSP Name
 | Pathways Qualifying Activities | Screen | nan | nan | nan | In the Qualifying Activity Hours screen, there is an Information Icon that is displayed in the description. If the Information Icon is clicked, this window will appear. | nan | nan | nan | nan | nan | nan | Add | Yes | nan | nan | nan | nan | nan | nan | nan | CP_DPLY_TXT | TXT_ID | ABQualifyingHelpText.jsp
@@ -94,7 +94,7 @@ Community Service-Relative Caregiving
 
 # Validation Error Messages
 
-[cols="3,30%,30%", options="header"]
+[cols="3,1,1", options="header"]
 |===
 | Validation ID | Validation Description | Type
 | nan | nan | Error
@@ -102,7 +102,7 @@ Community Service-Relative Caregiving
 
 # CodeTable
 
-[cols="3,30%,30%", options="header"]
+[cols="3,1,1", options="header"]
 |===
 | Reference Table Name | Code | Description
 | EDUVERIFICATION | CV | Conversion
@@ -170,7 +170,7 @@ Community Service-Relative Caregiving
 
 # ChimesCodeTable
 
-[cols="3,30%,30%", options="header"]
+[cols="3,1,1", options="header"]
 |===
 | Reference Table Name | Code | Description
 | CHM_STUDENT_STATUS_CODES | 7GT12 | Attending Grades 7-12 > 12 hrs/wk
@@ -185,7 +185,7 @@ Community Service-Relative Caregiving
 
 # HelpText
 
-[cols="3,30%,30%", options="header"]
+[cols="3,1,1", options="header"]
 |===
 | Target Column | Page/Field Description | Help text
 | nan | Education - Details | The Education - Details page is used to enter the educational record of individuals between 6 and 59 years of age. This page contains five sections: Individual Information, Dates, Age Information, High School Graduation Information and Educational Details.~~{Note}: Education level is required for several assistance programs and is needed to determine LIF eligibility for 18 and 19 year old dependents. Education level and status is required at this point, as it is unknown what MA might be approved, and what group members may be mandatory and require this information to correctly determine whether this individual is included or excluded from the Medicaid group. For non-requesting individuals, unknown" may be selected. This should not  however  hold up MA benefits.~~{Individual Information}: This section displays the name and individual number of a person whose educational record is being entered  updated or viewed.~~{Dates}: This section is used to enter the Circumstances Start/Change Date  Reported On  Date Client Became Aware and Verification Received On dates These are all required fields.~~{Age Information}: This section displays the date of birth and age of the individuals.~~{High School Graduation Information}: This section is used to enter information about the individual's high school status. The Status field is required.~~{Education Details}: This section is used to enter information about the individual's overall educational status. Highest level of Education Completed  Enrollment Status and Verification fields are required."
@@ -208,7 +208,7 @@ Community Service-Relative Caregiving
 
 # Change Log
 
-[cols="3,30%,30%,30%,30%,30%", options="header"]
+[cols="3,1,1,1,1,1", options="header"]
 |===
 | Version Number | Date | Description of Change Made | Review Comment (Ref comment # from response sheet) | Location of Change (e.g. Cell, row, etc.) | Requirements
 | vPATHWAYSv0.1 | 2020-10-30 00:00:00 | New Screen | Pathways Waiver Implementation | New Screen | FR-0312
