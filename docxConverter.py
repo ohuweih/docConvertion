@@ -164,14 +164,8 @@ def add_links_to_bibliography(content, keys):
 
 
 def remove_bad_plus_syntax(content):
-    pattern = "++_++"
-    matches = set()
-    matches.update(re.findall(pattern, content))
-
-    # Iterate over the matches and modify the figure tags
-    for match in matches:
-        content = content.replace(match, '')
-
+    pattern = "\+\+"
+    return re.sub(pattern, '', content)
 
 def process_content(content):
     logging.info("Removing certain patterns in asciidoc file")
