@@ -85,13 +85,15 @@ def main():
     parser.add_argument("-o", "--output", required=True, help="name of file to convert to")
 
     args = parser.parse_args()
-    media_folder = f"{args.to}/extracted_media/"
+
 
     if ".docx" in args.input:
+        media_folder = f"{args.output}/extracted_media/"
         run_pandoc(media_folder, args.input, f"{args.output}_no_format.adoc")
         fix_asciidoc(f"{args.output}/{args.output}_no_format.adoc", f"{args.output}.adoc")
         imageConverter.convert_images_to_png(media_folder)
     elif ".xlsx" in args.input:
+        image_output_dir = f"{args.output}/extracted_images/"
         xlsxConverter.convert_xlsx_to_adoc_with_images(args.input, args.output, image_output_dir)
     else:
         print("File not supported: Expected a docx or xlsx file")
