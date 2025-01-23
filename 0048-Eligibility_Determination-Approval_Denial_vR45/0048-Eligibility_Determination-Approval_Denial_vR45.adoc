@@ -1641,7 +1641,7 @@ This section is always included.
 [arabic, start=2]
 . *Section Text/Layout*
 
-image:/extracted_media/media/image1.png[/extracted_media/media/image1,width=71,height=72][Cnty_DFCS_Name]
+image:extracted_media/media/image1.png[extracted_media/media/image1,width=71,height=72][Cnty_DFCS_Name]
 *DEPARTMENT OF HUMAN SERVICES*
 
 [Cnty_DFCS_Addr] *DEPARTMENT OF COMMUNITY HEALTH*
@@ -1901,7 +1901,7 @@ EDBC_ACTION_CD= ‘AP’; Set Action Code = A)*
 
 *Supplemental Nutrition Assistance Program (SNAP)*
 
-image:/extracted_media/media/image2.png[https://167.193.156.41/servlet/webacc/dk1jn3Zgaqibnk1Jqd/GWAP/AREF/51?action=Attachment.View&Item.Attachment.id=51&User.context=dk1jn3Zgaqibnk1Jqd&Item.drn=24177z23z0,width=47,height=47]
+image:extracted_media/media/image2.png[https://167.193.156.41/servlet/webacc/dk1jn3Zgaqibnk1Jqd/GWAP/AREF/51?action=Attachment.View&Item.Attachment.id=51&User.context=dk1jn3Zgaqibnk1Jqd&Item.drn=24177z23z0,width=47,height=47]
 
 *Application Date:* [Application_Date]
 
@@ -1959,7 +1959,7 @@ ____
 *Application Date:* [Application_Date]
 ____
 
-image:/extracted_media/media/image2.png[https://167.193.156.41/servlet/webacc/dk1jn3Zgaqibnk1Jqd/GWAP/AREF/51?action=Attachment.View&Item.Attachment.id=51&User.context=dk1jn3Zgaqibnk1Jqd&Item.drn=24177z23z0,width=47,height=47]
+image:extracted_media/media/image2.png[https://167.193.156.41/servlet/webacc/dk1jn3Zgaqibnk1Jqd/GWAP/AREF/51?action=Attachment.View&Item.Attachment.id=51&User.context=dk1jn3Zgaqibnk1Jqd&Item.drn=24177z23z0,width=47,height=47]
 
 [width="100%",cols="27%,19%,15%,39%",options="header",]
 |===
@@ -2000,7 +2000,7 @@ ____
 *Application Date:* [Application_Date]
 ____
 
-image:/extracted_media/media/image2.png[https://167.193.156.41/servlet/webacc/dk1jn3Zgaqibnk1Jqd/GWAP/AREF/51?action=Attachment.View&Item.Attachment.id=51&User.context=dk1jn3Zgaqibnk1Jqd&Item.drn=24177z23z0,width=47,height=47]
+image:extracted_media/media/image2.png[https://167.193.156.41/servlet/webacc/dk1jn3Zgaqibnk1Jqd/GWAP/AREF/51?action=Attachment.View&Item.Attachment.id=51&User.context=dk1jn3Zgaqibnk1Jqd&Item.drn=24177z23z0,width=47,height=47]
 
 [width="100%",cols="27%,19%,15%,39%",options="header",]
 |===
@@ -2038,7 +2038,7 @@ EDBC_ACTION_CD= ‘AP’; Set Action Code = A)*
 
 *Application Date:* [Application_Date]
 
-image:/extracted_media/media/image3.png[/extracted_media/media/image3]
+image:extracted_media/media/image3.png[extracted_media/media/image3]
 
 [width="100%",cols="27%,19%,15%,39%",options="header",]
 |===
@@ -2089,7 +2089,7 @@ Parents Raising Grandchildren Benefit Amount) GRG_BEN_AMT >
 
 *Application Date:* [Application_Date]
 
-image:/extracted_media/media/image3.png[/extracted_media/media/image3]
+image:extracted_media/media/image3.png[extracted_media/media/image3]
 
 [width="100%",cols="27%,19%,15%,39%",options="header",]
 |===
@@ -2128,7 +2128,7 @@ EDBC_ACTION_CD= ‘AP’; Set Action Code = A)*
 
 *Application Date:* [Application_Date]
 
-image:/extracted_media/media/image3.png[/extracted_media/media/image3]
+image:extracted_media/media/image3.png[extracted_media/media/image3]
 
 [width="100%",cols="26%,19%,20%,35%",options="header",]
 |===
@@ -2170,7 +2170,7 @@ EDBC_ACTION_CD= ‘AP’; Set Action Code = A)*
 
 *AND If (Type of Assistance = RCA)*
 
-image:/extracted_media/media/image4.png[Finansijska
+image:extracted_media/media/image4.png[Finansijska
 pomoć za izbjeglice (RCA) ,width=72,height=64]*Refugee Assistance*
 
 *Application Date:* [Application_Date]
@@ -2246,7 +2246,7 @@ L02, F01, F07, F09, F22, F44, P01, P02, P06, P10 , P11, P12, P13, P14,
 P15, P44, F15, S95, S99, A03, F99, P99, R01, P06, EMA, Q01, Q03, Q05,
 QI1, SSI, 180 or 181 or 182 or 183)*
 
-image:/extracted_media/media/image5.png[/extracted_media/media/image5,width=33,height=33]*Medical
+image:extracted_media/media/image5.png[extracted_media/media/image5,width=33,height=33]*Medical
 Assistance*
 
 Application Date: [Application_Date]
@@ -2536,7 +2536,7 @@ EDBC_ACTION_CD= ‘AP’; Set Action Code = A)*
 *AND If ((Type of Assistance = TP09 and FS_EXPEDITED_SW = ‘N’ or
 (FS_EXPEDITED_SW = ‘Y’ and no pending verification))*
 
-image:/extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
+image:extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
 have completed your **SNAP**application received
 [Application_Date]. Your certification period for SNAP is
 for the months of [Certification_Begin_Month, Year]
@@ -2565,7 +2565,7 @@ EDBC_ACTION_CD= ‘AP’; Set Action Code = A)*
 *AND If ((Type of Assistance = TP09) and FS_EXPEDITED_SW = ‘Y’
 and Pending Verification is present)*
 
-image:/extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
+image:extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
 have completed your *SNAP* application received
 [Application_Date]. You are temporarily approved for
 benefits.
@@ -2598,7 +2598,7 @@ call *Conduent* Customer Service at 1-888-421-3281 or go to
 https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.connectebt.com%2Fgaebtclient%2F&data=02%7C01%7CCarlene.Burgess%40dhs.ga.gov%7Cea5276f16a2f4d0e930508d57f1b0255%7C512da10d071b4b948abc9ec4044d1516%7C0%7C0%7C636554676433910551&sdata=VgmM6DdGMN2bFjtA8OA%2Fh3S2ZagtrmZpRsjs87Wt5gM%3D&reserved=0[https://www.connectebt.com/gaebtclient/]
 to request a replacement card.
 
-image:/extracted_media/media/image6.png[/extracted_media/media/image6,width=74,height=44]
+image:extracted_media/media/image6.png[extracted_media/media/image6,width=74,height=44]
 
 *Fragment Trigger Logic - [Moved from Denial Section]*
 
@@ -2606,7 +2606,7 @@ image:/extracted_media/media/image6.png[/extracted_media/media/image6,width=74,h
 
 *AND (Type of Assistance = TP09)*
 
-image:/extracted_media/media/image2.png[https://167.193.156.41/servlet/webacc/dk1jn3Zgaqibnk1Jqd/GWAP/AREF/51?action=Attachment.View&Item.Attachment.id=51&User.context=dk1jn3Zgaqibnk1Jqd&Item.drn=24177z23z0,width=51,height=51]
+image:extracted_media/media/image2.png[https://167.193.156.41/servlet/webacc/dk1jn3Zgaqibnk1Jqd/GWAP/AREF/51?action=Attachment.View&Item.Attachment.id=51&User.context=dk1jn3Zgaqibnk1Jqd&Item.drn=24177z23z0,width=51,height=51]
 
 We have denied your *SNAP* application received [Application_
 Date].
@@ -2814,7 +2814,7 @@ EDBC_ACTION_CD= ‘AP’; Set Action Code = A)*
 *AND If ((Type of Assistance = SSNP and FS_EXPEDITED_SW = ‘N’ or
 (FS_EXPEDITED_SW = ‘Y’ and no pending verification))*
 
-image:/extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
+image:extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
 have completed your *Senior SNAP* application received
 [Application_Date]. Your certification period for *Senior
 SNAP* is for the months of [Certification_Begin_Month,
@@ -2843,7 +2843,7 @@ EDBC_ACTION_CD= ‘AP’; Set Action Code = A)*
 *AND If ((Type of Assistance = SSNP) and FS_EXPEDITED_SW = ‘Y’
 and Pending Verification is present)*
 
-image:/extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
+image:extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
 have completed your *Senior SNAP* application received
 [Application_Date]. You are temporarily approved for
 benefits.
@@ -2877,7 +2877,7 @@ call *Conduent* Customer Service at 1-888-421-3281 or go to
 https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.connectebt.com%2Fgaebtclient%2F&data=02%7C01%7CCarlene.Burgess%40dhs.ga.gov%7Cea5276f16a2f4d0e930508d57f1b0255%7C512da10d071b4b948abc9ec4044d1516%7C0%7C0%7C636554676433910551&sdata=VgmM6DdGMN2bFjtA8OA%2Fh3S2ZagtrmZpRsjs87Wt5gM%3D&reserved=0[https://www.connectebt.com/gaebtclient/]
 to request a replacement card.
 
-image:/extracted_media/media/image6.png[/extracted_media/media/image6,width=74,height=44]
+image:extracted_media/media/image6.png[extracted_media/media/image6,width=74,height=44]
 
 *Fragment Trigger Logic - [Moved from Denial Section]*
 
@@ -2885,7 +2885,7 @@ image:/extracted_media/media/image6.png[/extracted_media/media/image6,width=74,h
 
 *AND (Type of Assistance = SSNP)*
 
-image:/extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
+image:extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
 have denied your *Senior SNAP* application received
 [Application_Date].
 
@@ -3070,7 +3070,7 @@ EDBC_ACTION_CD= ‘AP’; Set Action Code = A)*
 
 *AND If ((Type of Assistance = DSAS)*
 
-image:/extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
+image:extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
 have approved your *Disaster SNAP* application received
 [Application_Date]. Your household is eligible for disaster
 benefits in the amount of $ [Benefit_Amt] from
@@ -3097,7 +3097,7 @@ verbally or in writing.
 
 *AND (Type of Assistance = DSAS)*
 
-image:/extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
+image:extracted_media/media/image2.png[51?action=Attachment,width=38,height=38]We
 have denied your *Disaster SNAP* application received
 [Application_Date].
 
@@ -3230,7 +3230,7 @@ EDBC_ACTION_CD= ‘AP’; Set Action Code = A)*
 
 *AND If (Type of Assistance = TP01)*
 
-image:/extracted_media/media/image7.png[/extracted_media/media/image7,width=71,height=45]If
+image:extracted_media/media/image7.png[extracted_media/media/image7,width=71,height=45]If
 this is your first time being approved for TANF or Child Support, a
 Georgia EPPICard Debit MasterCard will be mailed to you. If you have
 received Child Support in the last three years, you should have an
@@ -5272,7 +5272,7 @@ SSNP, 181*
 
 *180*,*182 or 183, DTNF)*
 
-image:/extracted_media/media/image10.png[/extracted_media/media/image10,width=61,height=50]*How
+image:extracted_media/media/image10.png[extracted_media/media/image10,width=61,height=50]*How
 do I file a fair hearing?*
 
 ____
@@ -5287,7 +5287,7 @@ F11, F40, F13, D02, F12, F41, F42, PRT, S02, S03, S04, S05, S06, L02,
 F01, F07, F09, F22, F44, P01, P06, F15, S95, S99, A03, F99, P99, R03,
 R02, R01, P06, EMA, Q01, Q03, Q05, QI1, P02, P44, SSI and Approval)*
 
-image:/extracted_media/media/image11.png[/extracted_media/media/image11,width=38,height=38]
+image:extracted_media/media/image11.png[extracted_media/media/image11,width=38,height=38]
 
 ____
 The Department of Community Health will mail a Medicaid card for each
@@ -5344,7 +5344,7 @@ receiving Medicaid for an adult. You must report these changes within 10
 calendar days of the date on which the change occurs.
 ____
 
-image:/extracted_media/media/image5.png[/extracted_media/media/image5,width=34,height=34]
+image:extracted_media/media/image5.png[extracted_media/media/image5,width=34,height=34]
 
 *If (Type of Assistance = PTH)*
 
@@ -5355,7 +5355,7 @@ During your *Medicaid* eligibility period, you must report if anyone
 moves in or out of your home and any changes in your household’s income.
 ____
 
-image:/extracted_media/media/image5.png[/extracted_media/media/image5,width=33,height=33]
+image:extracted_media/media/image5.png[extracted_media/media/image5,width=33,height=33]
 
 ____
 Additionally, if you are enrolled in *Georgia Pathways*, you must report
@@ -5383,7 +5383,7 @@ you are a working adult with no children, you must also report when your
 work hours fall below 20 hours per week or 80 hours per month.
 ____
 
-image:/extracted_media/media/image12.png[51?action=Attachment,width=45,height=45]
+image:extracted_media/media/image12.png[51?action=Attachment,width=45,height=45]
 
 ____
 You must also report when your household receives substantial lottery
@@ -5406,7 +5406,7 @@ resources. You must report these changes within 10 calendar days of the
 date on which the change occurs.
 ____
 
-image:/extracted_media/media/image3.png[/extracted_media/media/image3]
+image:extracted_media/media/image3.png[extracted_media/media/image3]
 
 *Fragment Trigger Logic*
 
@@ -5626,7 +5626,7 @@ F11, F40, F13, D02, F12, F41, F42, PRT, S02, S03, S04, S05, S06, L02,
 F01, F07, F09, F22, F44, P01, P06, F15, S95, S99, A03, F99, P99, R03,
 R02, R01, P06, EMA, Q01, Q03, Q05, QI1, SSI)*
 
-image:/extracted_media/media/image5.png[/extracted_media/media/image5,width=42,height=42]
+image:extracted_media/media/image5.png[extracted_media/media/image5,width=42,height=42]
 
 ____
 People approved for Medicaid will continue to receive Medicaid unless
@@ -5648,13 +5648,13 @@ eligibility**.** Before your eligibility ends, we will send you a letter
 telling you what to do to keep getting *SNAP/Senior SNAP* benefits.
 ____
 
-image:/extracted_media/media/image12.png[51?action=Attachment,width=45,height=45]
+image:extracted_media/media/image12.png[51?action=Attachment,width=45,height=45]
 
 *Fragment Trigger Logic*
 
 *If (Type of Assistance= TP01)*
 
-image:/extracted_media/media/image3.png[/extracted_media/media/image3]
+image:extracted_media/media/image3.png[extracted_media/media/image3]
 
 ____
 Households approved for TANF will continue to receive TANF unless there
@@ -6276,7 +6276,7 @@ may be conducted 42 C.F.R. § 431.222*.
 [arabic, start=2]
 . *Section Text/Layout*
 
-image:/extracted_media/media/image10.png[/extracted_media/media/image10,width=168,height=138]*FAIR
+image:extracted_media/media/image10.png[extracted_media/media/image10,width=168,height=138]*FAIR
 HEARING REQUEST*
 
 ____

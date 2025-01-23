@@ -126,5 +126,5 @@ def replace_image_suffix_to_png(content):
 
 def fix_image_file_path(content, output_file):
     pattern = f"{output_file}/extracted_media/media/"
-    content = re.sub(pattern, '/extracted_media/media/', content)
+    content = re.sub(pattern, 'extracted_media/media/', content)
     return content
