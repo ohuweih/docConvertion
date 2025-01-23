@@ -20,16 +20,16 @@ def run_pandoc(media_folder, input_file, output_file):
         output_file (str): Path to the file where output will be saved. 
     """ 
 
-    pandoc_path = shutil.which("pandoc") or os.path.join(os.getcwd(), "pandoc")
+#    pandoc_path = shutil.which("pandoc") or os.path.join(os.getcwd(), "pandoc")
 
-    if not os.path.exists(pandoc_path):
-        print("Pandoc executable not found. Ensure Pandoc is installed and available in the system PATH.")
-        return
+#    if not os.path.exists(pandoc_path):
+#        print("Pandoc executable not found. Ensure Pandoc is installed and available in the system PATH.")
+#        return
     
     try:
         if not os.path.exists(media_folder): 
             os.makedirs(media_folder)
-        command = f"{pandoc_path} -f docx -t asciidoc --default-image-extension .png --extract-media={media_folder} -o {output_file[:-15]}/{output_file} {input_file}"
+        command = f"pandoc -f docx -t asciidoc --default-image-extension .png --extract-media={media_folder} -o {output_file[:-15]}/{output_file} {input_file}"
 
         subprocess.run(command, check=True) 
         print(f"Command executed successfully. Output saved to {output_file}") 

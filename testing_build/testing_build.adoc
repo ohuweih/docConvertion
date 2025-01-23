@@ -1,0 +1,296 @@
+[width="100%",cols="100%",options="header",]
+|===
+a|
+*Business Rule(s):*
+
+*Interview Requirements:*
+
+*An interview is required for the following programs. The acceptable
+interview modes for the programs are as listed below:*
+
+[arabic]
+. Medicaid (Applicable for Nursing Home, Institutional Hospice, CCSP,
+NOW/ COMP, ICWP, Katie Beckett, Adult Medically Needy De-facto, Adult
+Medically Needy Spenddown COAs & Pathways): An interview is ONLY
+required in “Intake” mode. Interview Types of ‘In Person’ or ‘Telephone’
+are acceptable. For Pathways, an interview is only required for
+‘Pathways Reasonable Modification’.
+[loweralpha]
+.. For Pathways Reasonable Modification, an interview Is required for
+change and renewal modes.
+. Food Stamps:
+
+[loweralpha]
+. In Intake mode, Interview Types of ‘Home Visit’ or ‘In Person’ or
+‘Telephone’ are acceptable.
+. In Renewal mode, if the renewal type = ‘S’, then Interview Types of
+‘Home Visit’ or ‘In Person’ or ‘Telephone’ are acceptable *(
+====
+Note: An
+====
+
+interview is NOT required if the FS renewal type is ‘A’)*
+
+[arabic, start=3]
+. TANF/ RCA: Interview Types of ‘Home Visit’ or ‘In Person’ or
+‘Telephone’ are acceptable irrespective of the case mode
+. ChildCare: Interview Types of #[line-through]#‘Home Visit’ or ‘In
+Person’ or## ‘Telephone’ are acceptable in Intake and Renewal mode
+
+*[.underline]#Interview Non-Financial Criteria:#*
+
+[arabic]
+. *Intake Mode:*
+
+* *New Application:* If the ‘Date Interviewed’ is EQUAL to or GREATER
+than the Application Received Date (application status should be ‘AC’ or
+‘CP’) for the program being evaluated AND the interview type is
+acceptable (as defined above), then the AU meets the non-financial
+interview requirements *[.underline]#OR#*
+* *Add a Program:* If the ‘Date Interviewed’ is EQUAL to or GREATER than
+the Program Request Date for the program being evaluated AND the
+interview type is acceptable (as defined above), then the AU meets the
+non-financial interview requirements *[.underline]#OR#*
+* *Reopen:* If the ‘Date Interviewed’ is EQUAL to or GREATER than the
+Reopen Date for the program being evaluated AND the interview type is
+acceptable (as defined above), then the AU meets the non-financial
+interview requirements
+
+[arabic, start=2]
+. *Renewal Mode:* If the ‘Date Interviewed’ is EQUAL to or GREATER than
+the Form Sent Date for that renewal period for the program being
+evaluated AND the interview type is acceptable (as defined above), then
+the AU meets the non-financial interview requirements (*
+====
+Note:* This rule
+====
+
+will not be applicable if MA is being processed as a renewal)
+. ELSE, the program is denied for not meeting the interview
+requirements.
+
+(*
+====
+Note:* The interview type of ‘Not Required’ will not be considered
+====
+
+acceptable for programs that have mandatory interview requirements in
+Intake and Renewal mode. There is no interview requirement in Change
+mode)
+
+Non-compliance sanction for failure to meet conciliation appointment
+(Applicable for TANF only):
+
+[arabic]
+. If an individual in the TANF household fails to meet the conciliation
+appointment, then the worker will manually a non-compliance sanction
+type = “Failure to attend conciliation appointment”
+. The TANF EDG should be denied starting from the Non-Compliance Date
+month as entered by the worker in Intake.
+. The TANF EDG should be terminated from the month following the
+Non-Compliance Date (manually entered by the worker) {plus} 14 days in
+Change mode
+. The non-compliance sanction should not be imposed if there is a good
+cause entered
+
+Non-compliance for failure to meet Pathways Reasonable Modification
+Appointment (Applicable for Pathways MA only):
+
+[arabic]
+. If the Pathways individual requesting a Reasonable Modification in the
+Medical Assistance household fails to meet the Pathways Reasonable
+Modification Appointment (Case Mode = Intake, Renewal, or Change,
+Appointment Type = Pathways Reasonable Modification, Appointment Status
+= No-Show Appointment, AND if Case Mode = Renewal, then ‘Appointment
+Date’ is EQUAL to or GREATER than the Form Sent Date for that renewal
+period for the MA program)
+. For all modes, If the Pathways individual is not eligible, Pathways
+individual should be denied for failure to meet the Qualifying Activity
+Requirement and failure to cooperate with the eligibility process
+(EL9121 - YOU ARE NOT ELIGIBLE FOR PATHWAYS MEDICAID BECAUSE YOU HAVE
+NOT MET THE QUALIFYING ACTIVITIES REQUIREMENTS, and EL9014 – FAILED TO
+COOPERATE WITH THE ELIGIBILITY PROCESS)
+
+*OPA Rules:*
+
+The OPA rules in this section were informational for the initial
+requirement and design phase. These initial rules have been subsequently
+removed from the document. The section mentioned above are the
+specifications per GA IES policy and the actual business rules will
+reside in the OPA repository
+
+|*Glossary*
+|===
+
+[width="100%",cols=">24%,>12%,42%,22%",options="header",]
+|===
+|*Change Log* | | |
+|*Version Number* |*Date* |*Description of Change Made* |*Review Comment
+(Ref comment # from response sheet)*
+
+|V0_1 |09/23/14 |Initial Submission |
+
+|V0_2 |10/28/14 a|
+BRS Structure updated as per JAD session held on 10/01/14.
+
+Food Stamps Rules have been updated as per comments. Child Care rules
+have been updated as per PMC Action Item #251947.
+
+Medicaid rules updated as per State’s comments and policy.
+
+|
+
+|V0_3 |11/19/14 |Updates made to add the TANF missed appointment at
+Renewal policy. |
+
+|V0_4 |12/09/14 |Removed PeachCare for Kids manual reference. Added
+PeachCare for Kids interview requirements. Updated Food Stamp
+information under initial application section. | 
+
+|V1_0 |12/19/14 |Iteration III Submission |
+
+|V1_1 |01/20/15 |Updated Food Stamps Initial Interview timeframe
+with “not including application date” for its 30-day timeframe. |7509
+
+|V2_0 |02/05/2015 |Final Submission |
+
+|V2_1 |02/11/2015 |Restructured the BRS with reference to the
+appointment status and appointment mode ref table values. Reworded the
+TANF rules for renewal appointments. Removed denial notice triggers for
+Child Care as interviews are not mandatory for them. |
+
+|V2_4 |05/15/2015 |Updated the BRS to map to Data Collection screen
+elements. |
+
+|V2_5_0 |06/24/2015 |Updated the BRS to remove auto-denial rules
+if an AU fails to keep the appointment. The rules will now only look at
+the Interview date and the interview mode for that program to pass the
+non-financial test. |
+
+|V2_7_0 |02/03/2015 |Updated the BRS to include Telephone as a
+valid interview for TANF per UAT Defect 40543. |
+
+|V2_7_0 |02/24/2016 |Updated the BRS to include Telephone as
+valid interview for FS per UAT defect 40706 |
+
+|V2_7_0 |03/09/2016 |Removed the date condition if the interview
+type = “Not Required” as per UAT defect 44572 |
+
+|V2_7_0 |03/28/2016 |Updated the interview requirements for
+Medicaid. |Refer to UAT defect 43626
+
+|V2_7_0 |4/1/2016 |Added interview requirements for CC |Refer to
+UAT defect 45519
+
+|V2_7_0 |4/18/2016 |Added rules for failure to attend
+conciliation appointment rule for TANF |UAT Defect 46285
+
+|V2_7_0 |9/7/2016 |For the Failure to meet conciliation
+appointment, the penalty period will be calculated with respect to the
+Non-Compliance Date captured on the Non-Compliance Details screen and
+not the Penalty Period Begin Date |UAT defect 57031
+
+|V2_7_1 |5/8/2018 a|
+Updated the interview requirements to the following:
+
+[arabic]
+. Intake Mode: If the ‘Date Interviewed’ is EQUAL to or GREATER than the
+Application Received Date (application status should be ‘AC’ or ‘CP’)
+for the program being evaluated AND the interview type is acceptable (as
+defined above), then the AU meets the non-financial interview
+requirements
+. Renewal Mode: If the ‘Date Interviewed’ is EQUAL to or GREATER than
+the Form Sent Date for that renewal period for the program being
+evaluated AND the interview type is acceptable (as defined above), then
+the AU meets the non-financial interview requirements (
+====
+Note: This rule
+====
+
+will not be applicable if MA is being processed as a renewal)
+. ELSE, the program is denied for not meeting the interview
+requirements.
+
+(
+====
+Note: The interview type of ‘Not Required’ will not be considered
+====
+
+acceptable for programs that have mandatory interview requirements in
+Intake and Renewal mode. There is no interview requirement in Change
+mode)
+
+|Defect 83628
+
+|V2_7_1 |5/21/2018 a|
+Added the following note for Alternate FS renewals:
+
+*(
+====
+Note: An
+====
+ interview is NOT required if the FS renewal type is ‘A’)*
+
+|Defect 83628
+
+|V2_7_2 |6/6/2018 a|
+Updated the rules for intake mode: Interview Non-Financial Criteria:
+
+*Intake Mode:*
+
+* *New Application:* If the ‘Date Interviewed’ is EQUAL to or GREATER
+than the Application Received Date (application status should be ‘AC’ or
+‘CP’) for the program being evaluated AND the interview type is
+acceptable (as defined above), then the AU meets the non-financial
+interview requirements *[.underline]#OR#*
+* *Add a Program:* If the ‘Date Interviewed’ is EQUAL to or GREATER than
+the Program Request Date for the program being evaluated AND the
+interview type is acceptable (as defined above), then the AU meets the
+non-financial interview requirements *[.underline]#OR#*
+* *Reopen:* If the ‘Date Interviewed’ is EQUAL to or GREATER than the
+Reopen Date for the program being evaluated AND the interview type is
+acceptable (as defined above), then the AU meets the non-financial
+interview requirements
+
+|Defect 83628
+
+|vPATHWAYSv1.0 |12/16/2020 |Added Interview Non-Compliance requirements
+for the Pathways Class of Assistance |Pathways Release 1 Design
+Submission
+
+|vPATHWAYSv2.0 |1/8/2021 a|
+Added ineligibility notice reason EL9014 for failure to meet Pathways QA
+appointment per State Comment Review request 795.
+
+Modified Pathways logic to trigger the ineligibility reasons for failure
+to attend appointment in Change and Renewal mode per State Comment
+Review request 794.
+
+|Pathways Release 1 Design Submission
+
+|vPATHWAYSv2.1 |1/13/2021 |Modified logic for generating ineligibility
+reasons for the Reasonable Modification appointment in Renewal mode
+according to the Appointment Date rather than the Interview Date per
+State Review Comment 794. |Pathways Release 1 Design Submission
+
+|vPATHWAYSv2.0v0.1 |2/16/2023 |Interim Pathways 2.0 submission |N/A
+
+|vPATHWAYS2.0v1.0 |3/1/2023 a|
+Final Design Submission
+
+Pathways is added on page 1 under MA for interviews
+
+|State Comment ID 147
+
+|vPATHWAYS2.0v1.1 |3/22/2023 |Design Deliverable Response Submission
+Updated verbiage on for Interview Requirements on page one for ‘Pathways
+Reasonable Modification’. |State Comment ID 147
+
+|vPATHWAYS2.0v1.2 |5/17/2023 |Updated EL8*** (8 series) Notices
+codes to EL9*** (9 series) Notice codes |N/A
+
+|v35.0 |8/21/2023 |N/A |N/A
+
+|V48.0 |09/03/2024 |Updated CC to be Telephone appointment only
+|CR852463
+|===
