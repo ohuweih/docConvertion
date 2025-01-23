@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO,
                     handlers=[logging.FileHandler("my_log_file.log", mode='w', encoding='utf-8'),
                               logging.StreamHandler()])
         
-def process_content(content):
+def process_content(content, output_file):
     logging.info("Removing certain patterns in asciidoc file")
     content = formatting.remove_text_by_patterns(content)
 
@@ -38,6 +38,9 @@ def process_content(content):
 
     logging.info("Removing bad ++ patters")
     content = formatting.remove_bad_plus_syntax(content)
+    
+    logging.info("fixing image file paths")
+    content = formatting.fix_image_file_path(content, output_file)
 
     return content
 
@@ -55,7 +58,7 @@ def fix_asciidoc(input_file, output_file):
     with open(input_file, 'r', encoding="utf-8") as file:
         content = file.read()
 
-    content = process_content(content)
+    content = process_content(content, output_file)
     write_output(f"{output_file}/{output_file}.adoc", content)
     os.remove(input_file) 
 
@@ -66,7 +69,6 @@ def main():
     
     '''
     ### TODO Remove parser and add a gui file selection ###
-    ### TODO remove output arg and derive everything from input ###
     parser = argparse.ArgumentParser(description="convert docx to adoc, including image support")
     parser.add_argument("-i", "--input", required=True, help="Docx to convert")
 
@@ -76,7 +78,6 @@ def main():
     file_name = os.path.basename(args.input)
     file_stem = os.path.splitext(file_name)[0]
 
-    ### TODO Write a function that handles terrable document names ###
     if ".docx" in args.input:
         media_folder = f"{file_stem}/extracted_media/"
         pandoc.run_pandoc(media_folder, args.input, f"{file_stem}")

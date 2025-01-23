@@ -9,4 +9,5 @@ INFO:root:Connecting in-document references to bibliography
 INFO:root:Fixing image captions
 INFO:root:Escaping square brackets
 INFO:root:Removing bad ++ patters
+INFO:root:fixing image file paths
 INFO:root:Writing fixed content to the output file: 0048-Eligibility_Determination-Approval_Denial_vR45/0048-Eligibility_Determination-Approval_Denial_vR45.adoc
