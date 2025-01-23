@@ -171,23 +171,29 @@ def convert_xlsx_to_adoc_with_images(input_file, output_file, image_output_dir):
                     adoc_file.write("| " + " | ".join(map(str, row)) + "\n") 
                 adoc_file.write("|===\n\n")
 
-        print(f"Successfully converted {input_file} to {output_file} with images in {image_output_dir}") 
+        print(f"Successfully converted {input_file} to {output_file}.adoc with images in {image_output_dir}") 
     except Exception as e: 
         print(f"Error occurred: {e}") 
         
 
 def main():
     '''
-    Main fuction will take two arguments (input_file and output_file) and run a xlsx to asciidoc conversion of the file and put all media in to its own folder "./extracted_images"
-
+    Main fuction will take two arguments (input_file) and run a docx to asciidoc conversion of the file, put all media in to its own folder "/media/media", edit the asciidoc file to change all .emf strings to .png strings and convert all emf images to png images"
+    
     '''
-    parser = argparse.ArgumentParser(description="convert xlsx to adoc, including image support")
-    parser.add_argument("-i", "--input", required=True, help="xlsx to convert")
-    parser.add_argument("-o", "--output", required=True, help="name of file to convert to")
+    ### TODO Remove parser and add a gui file selection ###
+    ### TODO remove output arg and derive everything from input ###
+    parser = argparse.ArgumentParser(description="convert docx to adoc, including image support")
+    parser.add_argument("-i", "--input", required=True, help="Docx to convert")
 
     args = parser.parse_args()
-    image_output_dir = f"{args.output}/extracted_images/" 
-    convert_xlsx_to_adoc_with_images(args.input, args.output, image_output_dir)
+
+    file_dir = os.path.dirname(args.input)
+    file_name = os.path.basename(args.input)
+    file_stem = os.path.splitext(file_name)[0]
+
+    image_output_dir = f"{file_stem}/extracted_images/" 
+    convert_xlsx_to_adoc_with_images(args.input, file_stem, image_output_dir)
 
 if __name__ == "__main__":
     main()
