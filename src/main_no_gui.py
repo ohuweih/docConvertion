@@ -43,6 +43,9 @@ def process_content(content, output_file):
     logging.info("fixing image file paths")
     content = formatting.fix_image_file_path(content, output_file)
 
+    logging.info("Adding Marks for review")
+    content = formatting.add_review_marker_for_images(content)
+
     return content
 
 

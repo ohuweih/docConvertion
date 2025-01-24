@@ -128,3 +128,9 @@ def fix_image_file_path(content, output_file):
     pattern = f"{output_file}/extracted_media/media/"
     content = re.sub(pattern, 'extracted_media/media/', content)
     return content
+
+def add_review_marker_for_images(content):
+    pattern = r"(image:extracted_media/media/.*)"
+    review_marker = "**======================PLEASE REVIEW HERE======================**\n"
+    content = re.sub(pattern, rf"{review_marker}\1", content)
+    return content
