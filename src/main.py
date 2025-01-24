@@ -72,8 +72,6 @@ def main():
     Main fuction will take two arguments (input_file and output_file) and run a docx to asciidoc conversion of the file, put all media in to its own folder "/media/media", edit the asciidoc file to change all .emf strings to .png strings and convert all emf images to png images"
     
     '''
-    ### TODO Remove parser and add a gui file selection ###
-
     root = tk.Tk()
     root.withdraw()  # Hide the root window
 
@@ -108,7 +106,7 @@ def main():
             if step == "Formatting":
                 print("Formatting as best we can")
                 fix_asciidoc(f"{file_stem}/{file_stem}_no_format.adoc", f"{file_stem}")
-            if step == "convert images to png":
+            if step == "Convert Images to PNG":
                 print("Converting images to png")
                 imageConverter.convert_images_to_png(media_folder)
     elif ".xlsx" in input_file:
