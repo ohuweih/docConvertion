@@ -78,52 +78,53 @@ def main():
     root = tk.Tk()
     root.withdraw()  # Hide the root window
 
-    messagebox.showinfo("Select Input File", "Please select the input file (e.g., .docx).")
-    input_file = filedialog.askopenfilename(
-        title="Select Input File",
+    messagebox.showinfo("Select Input Files", "Please select the input files you would like to convert (e.g., .docx).")
+    input_files = filedialog.askopenfilenames(
+        title="Select Input Files",
         filetypes=[("Word Documents", "*.docx"), ("Excel Spreedsheets", "*.xlsx"), ("All Files", "*.*")]
     )
-    if not input_file:
+    if not input_files:
         print("No input file selected.")
         return
     
-    file_dir = os.path.dirname(input_file)
-    file_name = os.path.basename(input_file)
-    file_stem = os.path.splitext(file_name)[0]
+    for input in input_files:
+        file_dir = os.path.dirname(input)
+        file_name = os.path.basename(input)
+        file_stem = os.path.splitext(file_name)[0]
 
 
 
-    docx_steps = ["Determine if docx or xlsx", "Extract Images", "Initail Convertion", "Formatting", "Convert Images to PNG"]
-    xlsx_steps = ["Determine if docx or xlsx", "Converting xlsx"]
+        docx_steps = ["Determine if docx or xlsx", "Extract Images", "Initail Convertion", "Formatting", "Convert Images to PNG"]
+        xlsx_steps = ["Determine if docx or xlsx", "Converting xlsx"]
 
-    if ".docx" in input_file:
-        for step in tqdm(docx_steps, desc="Overall Progress", unit="step"):
-            if step == "Determine if docx or xlsx":
-                print("Detected docx file")
-            if step == "Extract Images":
-                print("Extract Images")
-                media_folder = f"{file_stem}/extracted_media/"
-            if step == "Initail Convertion":
-                print("Doing Initail Convertion")
-                pandoc.run_pandoc(media_folder, input_file, f"{file_stem}")
-            if step == "Formatting":
-                print("Formatting as best we can")
-                fix_asciidoc(f"{file_stem}/{file_stem}_no_format.adoc", f"{file_stem}")
-            if step == "Convert Images to PNG":
-                print("Converting images to png")
-                imageConverter.convert_images_to_png(media_folder)
-    elif ".xlsx" in input_file:
-        for step in tqdm(xlsx_steps, desc="Overall Progress", unit="step"):
-            if step == "Determine if docx or xlsx":
-                print("Detected xlsx file")
-            if step == "Extract Images":
-                print("Extract Images")
-                image_output_dir = f"{file_stem}/extracted_images/"
-            if step == "Converting xlsx":
-                print("Doing Initail Convertion")
-                print("Formatting as best we can")
-                print("Converting images to png")
-                xlsxConverter.convert_xlsx_to_adoc_with_images(input_file, f"{file_stem}", image_output_dir)
+        if ".docx" in input:
+            for step in tqdm(docx_steps, desc="Overall Progress", unit="step"):
+                if step == "Determine if docx or xlsx":
+                    print("Detected docx file")
+                if step == "Extract Images":
+                    print("Extract Images")
+                    media_folder = f"{file_stem}/extracted_media/"
+                if step == "Initail Convertion":
+                    print("Doing Initail Convertion")
+                    pandoc.run_pandoc(media_folder, input, f"{file_stem}")
+                if step == "Formatting":
+                    print("Formatting as best we can")
+                    fix_asciidoc(f"{file_stem}/{file_stem}_no_format.adoc", f"{file_stem}")
+                if step == "Convert Images to PNG":
+                    print("Converting images to png")
+                    imageConverter.convert_images_to_png(media_folder)
+        elif ".xlsx" in input:
+            for step in tqdm(xlsx_steps, desc="Overall Progress", unit="step"):
+                if step == "Determine if docx or xlsx":
+                    print("Detected xlsx file")
+                if step == "Extract Images":
+                    print("Extract Images")
+                    image_output_dir = f"{file_stem}/extracted_images/"
+                if step == "Converting xlsx":
+                    print("Doing Initail Convertion")
+                    print("Formatting as best we can")
+                    print("Converting images to png")
+                    xlsxConverter.convert_xlsx_to_adoc_with_images(input, f"{file_stem}", image_output_dir)
         else:
             print("File not supported: Expected a docx or xlsx file")
 
