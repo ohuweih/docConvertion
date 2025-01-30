@@ -18,8 +18,15 @@ def run_pandoc(media_folder, input_file, output_file):
     try:
         if not os.path.exists(media_folder): 
             os.makedirs(media_folder)
-        command = f"pandoc -f docx -t asciidoc --default-image-extension .png --extract-media={media_folder} -o {output_file}/{output_file}_no_format.adoc {input_file}"
-
+        command = [
+            "pandoc",  # Use the found Pandoc executable
+            "-f", "docx",
+            "-t", "asciidoc",
+            "--default-image-extension", ".png",
+            "--extract-media", media_folder,
+            "-o", f"{output_file}/{output_file}_no_format.adoc",
+            input_file
+        ]
         subprocess.run(command, check=True) 
         print(f"Command executed successfully. Output saved to {output_file}") 
 
